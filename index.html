@@ -27,20 +27,55 @@
       }
       .fixed-content button {
         position: fixed;
+        bottom: 10px;
+        right: 0;
       }
       p {
         text-align: justify;
         margin: 10px;
       }
+      h1,
+      header {
+        background-color: brown;
+        text-align: center;
+        padding: 20px;
+      }
+      header {
+        position: sticky; /* fixed top:0 */
+        top: 0;
+        z-index: 2;
+      }
+      .combination-relative {
+        width: 600px;
+        height: 500px;
+        background-color: lightgreen;
+        position: relative;
+      }
+      .pos-absolute {
+        position: absolute;
+        right: 42px;
+        top: 40px;
+      }
+      .input-content {
+        background-color: orange;
+        position: relative;
+        width: 185px;
+      }
+      .input-content span {
+        position: absolute;
+        right: 0;
+      }
+      /* relative by deafult z-index :1 (z-index) */
     </style>
   </head>
   <body>
     <h1>Positioning</h1>
+    <header>Dashboard</header>
     <p>
       static-default position<br />
       position:value (static/relative/fixed/absolute/sticky) <br />
       left:value /right:value /top:value /bottom:value; <br />
-      any one direction <br />
+      combination with relative ->absolute any one direction <br />
       static -> default
     </p>
     <h4>Relative</h4>
@@ -59,13 +94,20 @@
       <div class="box">Content 2</div>
     </div>
 
+    <div class="combination-relative">
+      <button class="pos-absolute">Move to Back</button>
+    </div>
+
     <h4>Fixed</h4>
     document affect <br />
     starting & ending position document based vh(viewport height) display
     <div class="fixed-content">
       <button>Top to bottom</button>
     </div>
-
+    <div class="input-content">
+      <span>$</span>
+      <input type="number" />
+    </div>
     <p>
       ontrary to popular belief, Lorem Ipsum is not simply random text. It has
       roots in a piece of classical Latin literature from 45 BC, making it over
